@@ -4,10 +4,10 @@
 #include <Arduino.h>
 
 void Encoder_begin(
-    uint8_t pinA,
-    uint8_t pinB,
-    uint16_t pulsesPerChannel,
-    float gearRatio);
+	uint8_t pinA,
+	uint8_t pinB,
+	uint16_t pulsesPerChannel,
+	float gearRatio);
 
 void Encoder_update(void);
 

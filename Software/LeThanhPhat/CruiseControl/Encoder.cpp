@@ -33,133 +33,133 @@ float rpm_ = 0.0f;
 static void Encoder_isrA(void);
 
 void Encoder_begin(
-    uint8_t pinA,
-    uint8_t pinB,
-    uint16_t pulsesPerChannel,
-    float gearRatio)
+	uint8_t pinA,
+	uint8_t pinB,
+	uint16_t pulsesPerChannel,
+	float gearRatio)
 {
-    pinA_ = pinA;
-    pinB_ = pinB;
+	pinA_ = pinA;
+	pinB_ = pinB;
 
-    pulsesPerChannel_ = pulsesPerChannel;
-    gearRatio_ = gearRatio;
+	pulsesPerChannel_ = pulsesPerChannel;
+	gearRatio_ = gearRatio;
 
-    pulsesPerOutputRev_ =
-        (float)pulsesPerChannel_ *
-        gearRatio_;
+	pulsesPerOutputRev_ =
+		(float)pulsesPerChannel_ *
+		gearRatio_;
 
-    pinMode(pinA_, INPUT_PULLUP);
-    pinMode(pinB_, INPUT_PULLUP);
+	pinMode(pinA_, INPUT_PULLUP);
+	pinMode(pinB_, INPUT_PULLUP);
 
-    attachInterrupt(
-        digitalPinToInterrupt(pinA_),
-        Encoder_isrA,
-        RISING);
+	attachInterrupt(
+		digitalPinToInterrupt(pinA_),
+		Encoder_isrA,
+		RISING);
 }
 
 void Encoder_update(void)
 {
-    uint32_t cycleLocal;
-    uint32_t currentTimeLocal;
-    int8_t directionLocal;
+	uint32_t cycleLocal;
+	uint32_t currentTimeLocal;
+	int8_t directionLocal;
 
-    noInterrupts();
+	noInterrupts();
 
-    cycleLocal = cycleUs_;
-    currentTimeLocal = currentTimeUs_;
-    directionLocal = direction_;
+	cycleLocal = cycleUs_;
+	currentTimeLocal = currentTimeUs_;
+	directionLocal = direction_;
 
-    interrupts();
+	interrupts();
 
-    if (((micros() - currentTimeLocal) <= SIGNAL_TIMEOUT_US) &&
-        (cycleLocal > 0))
-    {
-        frequencyHz_ =
-            (float)MICROS_PER_SECOND /
-            (float)cycleLocal;
-    }
-    else
-    {
-        frequencyHz_ = 0.0f;
-        directionLocal = 0;
-    }
+	if (((micros() - currentTimeLocal) <= SIGNAL_TIMEOUT_US) &&
+	    (cycleLocal > 0))
+	{
+		frequencyHz_ =
+			(float)MICROS_PER_SECOND /
+			(float)cycleLocal;
+	}
+	else
+	{
+		frequencyHz_ = 0.0f;
+		directionLocal = 0;
+	}
 
-    rpm_ =
-        (frequencyHz_ * 60.0f) /
-        pulsesPerOutputRev_;
+	rpm_ =
+		(frequencyHz_ * 60.0f) /
+		pulsesPerOutputRev_;
 
-    rpm_ *= directionLocal;
+	rpm_ *= directionLocal;
 }
 
 uint32_t Encoder_getCycleUs(void)
 {
-    noInterrupts();
-    uint32_t value = cycleUs_;
-    interrupts();
+	noInterrupts();
+	uint32_t value = cycleUs_;
+	interrupts();
 
-    return value;
+	return value;
 }
 
 float Encoder_getFrequencyHz(void)
 {
-    return frequencyHz_;
+	return frequencyHz_;
 }
 
 float Encoder_getRPM(void)
 {
-    return rpm_;
+	return rpm_;
 }
 
 int8_t Encoder_getDirection(void)
 {
-    noInterrupts();
-    int8_t value = direction_;
-    interrupts();
+	noInterrupts();
+	int8_t value = direction_;
+	interrupts();
 
-    return value;
+	return value;
 }
 
 long Encoder_getPulseCount(void)
 {
-    noInterrupts();
-    long value = pulseCount_;
-    interrupts();
+	noInterrupts();
+	long value = pulseCount_;
+	interrupts();
 
-    return value;
+	return value;
 }
 
 static void Encoder_isrA(void)
 {
-    previousTimeUs_ = currentTimeUs_;
-    currentTimeUs_ = micros();
+	previousTimeUs_ = currentTimeUs_;
+	currentTimeUs_ = micros();
 
-    uint32_t cycle =
-        currentTimeUs_ -
-        previousTimeUs_;
+	uint32_t cycle =
+		currentTimeUs_ -
+		previousTimeUs_;
 
-    cycleSumUs_ += cycle;
-    cycleCounter_++;
+	cycleSumUs_ += cycle;
+	cycleCounter_++;
 
-    if (cycleCounter_ >= CYCLE_AVERAGE_COUNT)
-    {
-        cycleUs_ =
-            cycleSumUs_ /
-            CYCLE_AVERAGE_COUNT;
+	if (cycleCounter_ >= CYCLE_AVERAGE_COUNT)
+	{
+		cycleUs_ =
+			cycleSumUs_ /
+			CYCLE_AVERAGE_COUNT;
 
-        cycleSumUs_ = 0;
-        cycleCounter_ = 0;
-    }
+		cycleSumUs_ = 0;
+		cycleCounter_ = 0;
+	}
 
-    bool b = digitalRead(pinB_);
+	bool b = digitalRead(pinB_);
 
-    if (b == LOW)
-    {
-        pulseCount_++;
-        direction_ = 1;
-    }
-    else
-    {
-        pulseCount_--;
-        direction_ = -1;
-    }
+	if (b == LOW)
+	{
+		pulseCount_++;
+		direction_ = 1;
+	}
+	else
+	{
+		pulseCount_--;
+		direction_ = -1;
+	}
 }
