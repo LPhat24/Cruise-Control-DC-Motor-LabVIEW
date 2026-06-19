@@ -94,7 +94,9 @@ void Encoder_update(void)
 uint32_t Encoder_getCycleUs(void)
 {
 	noInterrupts();
+
 	uint32_t value = cycleUs_;
+
 	interrupts();
 
 	return value;
@@ -113,7 +115,9 @@ float Encoder_getRPM(void)
 int8_t Encoder_getDirection(void)
 {
 	noInterrupts();
+
 	int8_t value = direction_;
+
 	interrupts();
 
 	return value;
@@ -122,7 +126,9 @@ int8_t Encoder_getDirection(void)
 long Encoder_getPulseCount(void)
 {
 	noInterrupts();
+
 	long value = pulseCount_;
+
 	interrupts();
 
 	return value;
