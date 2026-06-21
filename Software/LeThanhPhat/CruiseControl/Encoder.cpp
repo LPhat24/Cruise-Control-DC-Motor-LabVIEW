@@ -3,9 +3,9 @@
 namespace
 {
 const uint32_t MICROS_PER_SECOND = 1000000UL;
-const uint32_t SIGNAL_TIMEOUT_US = 1000000UL;
+const uint32_t SIGNAL_TIMEOUT_US = 200000UL;
 
-const uint8_t CYCLE_AVERAGE_COUNT = 8;
+const uint8_t CYCLE_AVERAGE_COUNT = 2;
 
 uint8_t pinA_ = 4;
 uint8_t pinB_ = 5;
@@ -32,11 +32,7 @@ float rpm_ = 0.0f;
 
 static void Encoder_isrA(void);
 
-void Encoder_begin(
-	uint8_t pinA,
-	uint8_t pinB,
-	uint16_t pulsesPerChannel,
-	float gearRatio)
+void Encoder_begin(uint8_t pinA, uint8_t pinB, uint16_t pulsesPerChannel, float gearRatio)
 {
 	pinA_ = pinA;
 	pinB_ = pinB;
@@ -44,17 +40,12 @@ void Encoder_begin(
 	pulsesPerChannel_ = pulsesPerChannel;
 	gearRatio_ = gearRatio;
 
-	pulsesPerOutputRev_ =
-		(float)pulsesPerChannel_ *
-		gearRatio_;
+	pulsesPerOutputRev_ = (float)pulsesPerChannel_ * gearRatio_;
 
 	pinMode(pinA_, INPUT_PULLUP);
 	pinMode(pinB_, INPUT_PULLUP);
 
-	attachInterrupt(
-		digitalPinToInterrupt(pinA_),
-		Encoder_isrA,
-		RISING);
+	attachInterrupt(digitalPinToInterrupt(pinA_), Encoder_isrA, RISING);
 }
 
 void Encoder_update(void)
@@ -71,12 +62,9 @@ void Encoder_update(void)
 
 	interrupts();
 
-	if (((micros() - currentTimeLocal) <= SIGNAL_TIMEOUT_US) &&
-	    (cycleLocal > 0))
+	if (((micros() - currentTimeLocal) <= SIGNAL_TIMEOUT_US) && (cycleLocal > 0))
 	{
-		frequencyHz_ =
-			(float)MICROS_PER_SECOND /
-			(float)cycleLocal;
+		frequencyHz_ = (float)MICROS_PER_SECOND / (float)cycleLocal;
 	}
 	else
 	{
@@ -84,9 +72,7 @@ void Encoder_update(void)
 		directionLocal = 0;
 	}
 
-	rpm_ =
-		(frequencyHz_ * 60.0f) /
-		pulsesPerOutputRev_;
+	rpm_ = (frequencyHz_ * 60.0f) / pulsesPerOutputRev_;
 
 	rpm_ *= directionLocal;
 }
@@ -139,18 +125,14 @@ static void Encoder_isrA(void)
 	previousTimeUs_ = currentTimeUs_;
 	currentTimeUs_ = micros();
 
-	uint32_t cycle =
-		currentTimeUs_ -
-		previousTimeUs_;
+	uint32_t cycle = currentTimeUs_ - previousTimeUs_;
 
 	cycleSumUs_ += cycle;
 	cycleCounter_++;
 
 	if (cycleCounter_ >= CYCLE_AVERAGE_COUNT)
 	{
-		cycleUs_ =
-			cycleSumUs_ /
-			CYCLE_AVERAGE_COUNT;
+		cycleUs_ = cycleSumUs_ / CYCLE_AVERAGE_COUNT;
 
 		cycleSumUs_ = 0;
 		cycleCounter_ = 0;

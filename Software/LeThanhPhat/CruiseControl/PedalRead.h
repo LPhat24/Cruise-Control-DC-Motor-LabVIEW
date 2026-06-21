@@ -3,9 +3,7 @@
 
 #include <Arduino.h>
 
-void pedal_read_begin(
-	uint8_t gas_pin,
-	uint8_t brake_pin);
+void pedal_read_begin(uint8_t gas_pin, uint8_t brake_pin);
 
 void pedal_read_update(void);
 
