@@ -11,7 +11,7 @@ uint8_t pinA_ = 4;
 uint8_t pinB_ = 5;
 
 uint16_t pulsesPerChannel_ = 11;
-float gearRatio_ = 46.8f;
+float gearRatio_ = 9.6f; // Loại 620RPM thì TST=9.6; Loại 130RPM thì TST=46.8
 
 float pulsesPerOutputRev_ = 1.0f;
 

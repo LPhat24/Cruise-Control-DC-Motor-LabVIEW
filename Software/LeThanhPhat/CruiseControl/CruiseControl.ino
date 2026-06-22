@@ -16,7 +16,7 @@ static const uint8_t PIN_MOTOR_IN1 = 38;
 static const uint8_t PIN_MOTOR_IN2 = 39;
 
 static const uint16_t ENCODER_PULSES_PER_CHANNEL = 11;
-static const float GEAR_RATIO = 46.8f;
+static const float GEAR_RATIO = 9.6f; // Loại 620RPM thì TST=9.6; Loại 130RPM thì TST=46.8
 
 void setup()
 {
