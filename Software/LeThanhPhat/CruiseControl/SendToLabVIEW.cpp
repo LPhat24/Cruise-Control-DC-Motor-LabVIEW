@@ -12,7 +12,7 @@ void send_to_labview_begin(void)
 	last_send_time_ms = millis();
 }
 
-void send_to_labview_update(float rpm_value, uint16_t gas_value, uint16_t brake_value)
+void send_to_labview_update(float rpm_value, uint16_t gas_value, uint16_t brake_value, uint16_t distance_cm)
 {
 	uint32_t current_time_ms = millis();
 
@@ -25,7 +25,19 @@ void send_to_labview_update(float rpm_value, uint16_t gas_value, uint16_t brake_
 
 	Serial.print((int32_t)rpm_value);
 	Serial.print(",");
+
 	Serial.print(gas_value);
 	Serial.print(",");
-	Serial.println(brake_value);
+
+	Serial.print(brake_value);
+	Serial.print(",");
+
+	Serial.println(distance_cm);
 }
+
+/*
+ * RISK REVIEW:
+ * - UART frame format changed from 3 fields to 4 fields.
+ * - Caller must update LabVIEW parser.
+ * - Distance unit fixed in centimeters.
+ */
