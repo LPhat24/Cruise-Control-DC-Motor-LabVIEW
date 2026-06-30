@@ -5,6 +5,7 @@
 #include "SendToLabVIEW.h"
 #include "ReceiveFromLabVIEW.h"
 #include "SetMotor.h"
+#include "GearPosition.h"
 
 static const uint8_t PIN_ENCODER_A = 16;
 static const uint8_t PIN_ENCODER_B = 17;
@@ -18,6 +19,11 @@ static const uint8_t PIN_MOTOR_IN2 = 39;
 
 static const uint8_t PIN_ULTRASONIC_TRIG = 9;
 static const uint8_t PIN_ULTRASONIC_ECHO = 10;
+
+static const uint8_t PIN_GEAR_P = 4;
+static const uint8_t PIN_GEAR_R = 5;
+static const uint8_t PIN_GEAR_N = 6;
+static const uint8_t PIN_GEAR_D = 7;
 
 static const uint16_t ENCODER_PULSES_PER_CHANNEL = 11;
 static const float GEAR_RATIO = 9.6f;
@@ -36,6 +42,8 @@ void setup()
 
 	receive_from_labview_begin();
 
+	gear_begin(PIN_GEAR_P, PIN_GEAR_R, PIN_GEAR_N, PIN_GEAR_D);
+
 	set_motor_begin(PIN_MOTOR_PWM, PIN_MOTOR_IN1, PIN_MOTOR_IN2);
 
 	Serial.println("Cruise Control Ready");
@@ -51,11 +59,12 @@ void loop()
 
 	receive_from_labview_update();
 
-	set_motor_set_pwm(receive_from_labview_get_pwm());
+	gear_update();
 
 	send_to_labview_update(
 		Encoder_getRPM(),
 		pedal_read_get_gas_value(),
 		pedal_read_get_brake_value(),
-		read_ultrasonic_get_distance_cm());
+		read_ultrasonic_get_distance_cm(),
+		gear_get_position());
 }

@@ -1,36 +1,52 @@
 #include "ReceiveFromLabVIEW.h"
+#include "SetMotor.h"
 
 namespace
 {
-String receive_buffer_;
+	const size_t RX_BUFFER_SIZE = 32;
 
-int16_t pwm_value_ = 0;
-int16_t value_2_ = 0;
-int16_t value_3_ = 0;
+	char rx_buffer_[RX_BUFFER_SIZE];
+	size_t rx_index_ = 0;
+
+	int16_t pwm_value_ = 0;
 }
 
-static void parse_frame(String frame);
+static void parse_buffer(const char *buf);
 
 void receive_from_labview_begin(void)
 {
-	receive_buffer_ = "";
+	rx_index_ = 0;
+	pwm_value_ = 0;
 }
 
 void receive_from_labview_update(void)
 {
 	while (Serial.available())
 	{
-		char received_char = (char)Serial.read();
+		int c = Serial.read();
 
-		if (received_char == '\n')
+		if (c < 0)
+			continue;
+
+		if (c == '\r')
+			continue; /* ignore CR */
+
+		if (c == '\n')
 		{
-			parse_frame(receive_buffer_);
-
-			receive_buffer_ = "";
+			rx_buffer_[rx_index_] = '\0';
+			parse_buffer(rx_buffer_);
+			rx_index_ = 0;
+			continue;
 		}
-		else if (received_char != '\r')
+
+		if (rx_index_ < (RX_BUFFER_SIZE - 1))
 		{
-			receive_buffer_ += received_char;
+			rx_buffer_[rx_index_++] = (char)c;
+		}
+		else
+		{
+			/* overflow, reset buffer */
+			rx_index_ = 0;
 		}
 	}
 }
@@ -42,27 +58,69 @@ int16_t receive_from_labview_get_pwm(void)
 
 int16_t receive_from_labview_get_value_2(void)
 {
-	return value_2_;
+	return 0;
 }
 
 int16_t receive_from_labview_get_value_3(void)
 {
-	return value_3_;
+	return 0;
 }
 
-static void parse_frame(String frame)
+static void parse_buffer(const char *buf)
 {
-	int first_comma = frame.indexOf(',');
-	int second_comma = frame.indexOf(',', first_comma + 1);
+	/* skip leading spaces */
+	const char *p = buf;
 
-	if (first_comma < 0 || second_comma < 0)
-	{
+	while (*p == ' ' || *p == '\t')
+		p++;
+
+	if (*p == '\0')
 		return;
+
+	/* optional sign */
+	int sign = 1;
+	if (*p == '+')
+	{
+		sign = 1;
+		p++;
+	}
+	else if (*p == '-')
+	{
+		sign = -1;
+		p++;
 	}
 
-	pwm_value_ = frame.substring(0, first_comma).toInt();
+	int value = 0;
+	bool has_digit = false;
 
-	value_2_ = frame.substring(first_comma + 1, second_comma).toInt();
+	while (*p >= '0' && *p <= '9')
+	{
+		has_digit = true;
+		int digit = (*p - '0');
+		value = value * 10 + digit;
+		if (value > 255) /* magnitude overflow */
+			return; /* out of range */
+		p++;
+	}
 
-	value_3_ = frame.substring(second_comma + 1).toInt();
+	/* reject if no digits or invalid trailing characters */
+	if (!has_digit)
+		return;
+
+	while (*p == ' ' || *p == '\t') /* allow trailing whitespace */
+		p++;
+
+	if (*p != '\0')
+		return; /* invalid trailing chars */
+
+	int signed_value = value * sign;
+
+	/* final range check -255..255 */
+	if (signed_value < -255 || signed_value > 255)
+		return;
+
+	pwm_value_ = (int16_t)signed_value;
+
+	/* apply command via motor module */
+	set_motor_set_pwm(pwm_value_);
 }
