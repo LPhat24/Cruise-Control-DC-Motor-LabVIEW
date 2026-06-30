@@ -1,0 +1,1110 @@
+{
+  "uuid": "40722db890e5322f536424ca6aff2819",
+  "path": "Offline/Cruise-Control-LabVIEW",
+  "name": "Cruise-Control-LabVIEW",
+  "content": "",
+  "created_at": "2026-06-30 20:55:12",
+  "updated_at": "2026-07-01 00:40:31",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "2d45054085e86c5ead88eba3a3c1a71a",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "50eb6d3354e049b3b402087e8d1fde34": 1,
+        "1842dd1b6a754cf6aa129494689f9a6c": 2,
+        "9b94db58a3d5430e9f64c28cf8b3789e": 1,
+        "4db6c65afb264510b8085fac2f9acf78": 1,
+        "2136fccdbd134a5a9a82366e6666fe20": 1,
+        "28210fab1e2b404bb49aadc7b9a6eef5": 1,
+        "30e9cc3f028040f6acff44f6ce8aaa33": 4,
+        "aac52597c6ec48e09ea3705a2f54d7d2": 1,
+        "aca2740c2c514dbf98cb490533497957": 2,
+        "75c23df590e34207ab36df00459567cd": 2,
+        "847afc47d09049b5ac48efe132171d7c": 1,
+        "8c7e0bf7cf2c4af2b9a75a7913e1125f": 1,
+        "f015014a315a496bb4333d36d327b8f7": 1,
+        "46e448e6730942dfbf631c0fce2b0644": 2,
+        "1547138686a34a579ba6493e6df04065": 1,
+        "65c1979c313d4fe28893ec1d897284ed": 1,
+        "29f6cf7e9b82447b81907e190f250df1": 1,
+        "1acf1e1d1fd54583b1e97e23ce108ace": 2
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "Reserved Button",
+          4,
+          "KEY-THT BUTTON 2P 5.5MM 6X6MM",
+          "B1,B2,B3,B4",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "BUZZER-12X9",
+          1,
+          "BUZ-TH_BD12.0-P7.60-D0.6-FD",
+          "BUZZER1",
+          {
+            "Manufacturer Part": "buzzer-12X9",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900016920"
+          }
+        ],
+        [
+          "1000uF",
+          2,
+          "CAP-TH_BD8.0-P2.50-D1.0-FD",
+          "C1,C2",
+          {
+            "Manufacturer Part": "1000UF16VF160GF2",
+            "Manufacturer": "Econd(米朗电子)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C46867057"
+          }
+        ],
+        [
+          "100nF",
+          1,
+          "C0805",
+          "C3",
+          {
+            "Manufacturer Part": "CT41G-0805-2X1-50V-0.1uF-K(N)",
+            "Manufacturer": "TORCH(火炬)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C126469"
+          }
+        ],
+        [
+          "10uF",
+          1,
+          "C0805",
+          "C4",
+          {
+            "Manufacturer Part": "CT41G-0805-2X1-50V-0.1uF-K(N)",
+            "Manufacturer": "TORCH(火炬)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C126469"
+          }
+        ],
+        [
+          "Adapter Jack 5525",
+          1,
+          "DC-IN-TH_POWER-JACK",
+          "CN1",
+          {
+            "Manufacturer Part": "POWER-JACK",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900001795"
+          }
+        ],
+        [
+          "PH2.0-6P-Encoder",
+          1,
+          "CONN-TH_WAFER-PH2.0-6PZZ-GR",
+          "CN2",
+          {
+            "Manufacturer Part": "WAFER-PH2.0-6PZZ-GR",
+            "Manufacturer": "XUNPU(讯普)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C20617123"
+          }
+        ],
+        [
+          "XH2.54",
+          1,
+          "CONN-TH_4P-P2.50-XH2.54-4P",
+          "CN3",
+          {
+            "Manufacturer Part": "WAFER-HA2.54-4PZZ",
+            "Manufacturer": "XUNPU(讯普)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5359651"
+          }
+        ],
+        [
+          "SS54_SMB",
+          1,
+          "SMB_L4.3-W3.6-LS5.4-RD",
+          "D3",
+          {
+            "Manufacturer Part": "SS54",
+            "Manufacturer": "HXY MOSFET(华轩阳电子)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5200096"
+          }
+        ],
+        [
+          "LED-TH-3mm_B",
+          1,
+          "LED-TH_BD3.0_BLUE",
+          "LED1",
+          {
+            "Manufacturer Part": "204-10SUBC/S400-A4",
+            "Manufacturer": "EVERLIGHT(台湾亿光)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C86881"
+          }
+        ],
+        [
+          "ESP32-S3 N16R8 WEACT STUDIO",
+          1,
+          "WEACT ESP32-S3",
+          "M1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": "ESP32-S3-N16R8"
+          }
+        ],
+        [
+          "KF126R-5.0-3P",
+          2,
+          "CONN-TH_3P-P5.00_KF126R-5.0-3P",
+          "POT1,POT3",
+          {
+            "Manufacturer Part": "KF126R-5.0-3P",
+            "Manufacturer": "KEFA(科发)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C474903"
+          }
+        ],
+        [
+          "2SC1815-TH",
+          1,
+          "TO-92-3_L4.9-W3.7-P1.27-L",
+          "Q1",
+          {
+            "Manufacturer Part": "2SC1815-GR",
+            "Manufacturer": "YFW(佑风微)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C22459218"
+          }
+        ],
+        [
+          "1kΩ/0.25W",
+          2,
+          "R1206",
+          "R1,R4",
+          {
+            "Manufacturer Part": "HoAR1206-1/4W-1KR-1%-TCR50",
+            "Manufacturer": "Milliohm(毫欧)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2912605"
+          }
+        ],
+        [
+          "2.2kΩ",
+          1,
+          "R1206",
+          "R2",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "3,9kΩ",
+          1,
+          "R1206",
+          "R3",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "10kΩ/0.125W",
+          1,
+          "R0805",
+          "R5",
+          {
+            "Manufacturer Part": "RT0805BRD0751KL",
+            "Manufacturer": "YAGEO(国巨)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C728654"
+          }
+        ],
+        [
+          "KCD1-2P-X",
+          1,
+          "SW-TH_KCD1-101",
+          "SW1",
+          {
+            "Manufacturer Part": "KCD1-2P-X",
+            "Manufacturer": "SHOU HAN(首韩)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5884416"
+          }
+        ],
+        [
+          "MP2307DN",
+          1,
+          "MP2307DN_DC_DC_DOWN",
+          "U1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "TB6612 MODULE",
+          1,
+          "MOTOR_TB6612FNG_MODULE",
+          "U2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "ALI",
+            "Supplier Part": ""
+          }
+        ]
+      ],
+      "updateTime": 1782841231,
+      "createTime": 1782827712,
+      "histories": [],
+      "created_at": "2026-06-30 20:55:12",
+      "updated_at": "2026-07-01 00:40:31"
+    },
+    {
+      "uuid": "aef4ecf3543fc6d095159f41fd15cb75",
+      "puuid": "40722db890e5322f536424ca6aff2819",
+      "title": "Layout",
+      "filename": "Layout.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "0e9c66b66e5b439c90eae5ceae9bde47": 3,
+        "b3b82869fa924bae820e3a6cfb44d689": 1,
+        "8e9b1be4bcb6420dbd1d09bf04b02792": 5,
+        "2236b9ca37184721a557cdaa01e129c5": 4,
+        "4937126739894c52921de221c4760bbc": 1,
+        "52c11d38b35a4fc594f3067d1697639d": 1,
+        "e6194fb4e00e434295e110adefa0d85a": 1,
+        "64228cf27c294ab9b85cb32a92452055": 2,
+        "950c924929e8478f984e38b649c06765": 1,
+        "653b34eb7957444788845183be34a84f": 1,
+        "f302ba7fc2d64ac2b2ad82b374d69dac": 1,
+        "5bb3f311460a456db69c8ebd122bf0ba": 1,
+        "c309f5d2eb8e40b796181119d447a76e": 1,
+        "fdbc6bbda9eb4ebf929d3b1d7e65807f": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "1000uF",
+          3,
+          "CAP-D8.0×H10.5",
+          "C1,C2,C3",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "2SC1815-MS",
+          1,
+          "SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR",
+          "Q1",
+          {
+            "Manufacturer Part": "2SC1815-MS",
+            "Manufacturer": "MSKSEMI(美森科)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5120742"
+          }
+        ],
+        [
+          "2.2kΩ",
+          1,
+          "R1206",
+          "R1",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "3,9kΩ",
+          1,
+          "R1206",
+          "R2",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "10kΩ",
+          1,
+          "R1206",
+          "R3",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "1kΩ",
+          2,
+          "R1206",
+          "R4,R5",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "Reserved Button",
+          4,
+          "KEY-THT BUTTON 2P 5.5MM 6X6MM",
+          "B1,B2,B3,B4",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "BUZZER-12X9",
+          1,
+          "BUZ-TH_BD12.0-P7.60-D0.6-FD",
+          "BUZZER1",
+          {
+            "Manufacturer Part": "buzzer-12X9",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900016920"
+          }
+        ],
+        [
+          "LED-TH-3mm_B",
+          1,
+          "LED-TH_BD3.0_BLUE",
+          "LED1",
+          {
+            "Manufacturer Part": "204-10SUBC/S400-A4",
+            "Manufacturer": "EVERLIGHT(台湾亿光)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C86881"
+          }
+        ],
+        [
+          "HX-XH2.54-6PZZ-B",
+          1,
+          "CONN-TH_6P-P2.5-HX-XH2.54-6PZZ-B",
+          "MOTOR",
+          {
+            "Manufacturer Part": "HX-XH2.54-6PZZ-B",
+            "Manufacturer": "hanxia(韩下)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C49010022"
+          }
+        ],
+        [
+          "WH148-MONO",
+          2,
+          "WH148-MONO",
+          "POT1,POT2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "aliexpress",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "DC_DC",
+          1,
+          "DCDC (MP1584EN)",
+          "U",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "ESP32_S3_ESP32_S3_DevKitC_1",
+          1,
+          "COMM-TH_ESP32-S3-DEVKITC-N16R8",
+          "U1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "DUBEUYEW",
+            "Supplier": "",
+            "Supplier Part": "ESP32-S3 ESP32-S3-DevKitC-1"
+          }
+        ],
+        [
+          "Motor_TB6612_MODULE",
+          1,
+          "MOTOR_TB6612FNG_MODULE",
+          "U2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "ALI",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "WAFER-HA2.54-4PZZ",
+          1,
+          "CONN-TH_4P-P2.50-XH2.54-4P",
+          "U4",
+          {
+            "Manufacturer Part": "WAFER-HA2.54-4PZZ",
+            "Manufacturer": "XUNPU(讯普)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5359651"
+          }
+        ],
+        [
+          "POWER-JACK dc5525",
+          1,
+          "DC-IN-TH_POWER-JACK",
+          "U5",
+          {
+            "Manufacturer Part": "POWER-JACK",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900001795"
+          }
+        ],
+        [
+          "KCD1-2P-X",
+          1,
+          "SW-TH_KCD1-101",
+          "U6",
+          {
+            "Manufacturer Part": "KCD1-2P-X",
+            "Manufacturer": "SHOU HAN(首韩)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5884416"
+          }
+        ]
+      ],
+      "updateTime": 1782827739,
+      "createTime": 1782827739,
+      "histories": [],
+      "created_at": "2026-06-30 20:55:39",
+      "updated_at": "2026-06-30 20:55:39"
+    },
+    {
+      "uuid": "2462c99e7cc266621f78265a12fb3659",
+      "puuid": "40722db890e5322f536424ca6aff2819",
+      "title": "PCB_Cruise-Control-LabVIEW_2",
+      "filename": "PCB_Cruise-Control-LabVIEW_2.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "2ee8eb13a0124a108e622ce40c0c25a8": 2,
+        "44f4239726ed4ebd893f67f419e4b55b": 1,
+        "8e9b1be4bcb6420dbd1d09bf04b02792": 4,
+        "b60f399a7a7e41848b2be1eb49c79141": 1,
+        "2236b9ca37184721a557cdaa01e129c5": 4,
+        "4937126739894c52921de221c4760bbc": 1,
+        "c309f5d2eb8e40b796181119d447a76e": 1,
+        "136c310ac0c84278991a3db844bf695e": 1,
+        "5bb3f311460a456db69c8ebd122bf0ba": 1,
+        "52c11d38b35a4fc594f3067d1697639d": 1,
+        "b8a1ccc61728406c8ab2a45757df4768": 1,
+        "3620d538228c41c9ba4a73c8757dd03b": 2,
+        "6924b36489de4921bb29ca14bf27c33f": 1,
+        "fdbc6bbda9eb4ebf929d3b1d7e65807f": 1,
+        "f302ba7fc2d64ac2b2ad82b374d69dac": 1,
+        "e656abc767e048bd87fc55924255013b": 1,
+        "84551071718d4cc9abfb12ed9f701553": 2,
+        "c8232ec72007493490a49fb5bd0a7389": 6
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "Reserved Button",
+          4,
+          "KEY-THT BUTTON 2P 5.5MM 6X6MM",
+          "B1,B2,B3,B4",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "BUZZER-12X9",
+          1,
+          "BUZ-TH_BD12.0-P7.60-D0.6-FD",
+          "BUZZER1",
+          {
+            "Manufacturer Part": "buzzer-12X9",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900016920"
+          }
+        ],
+        [
+          "1000uF",
+          2,
+          "CAP-D8.0×H10.5",
+          "C1,C2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "100nF",
+          1,
+          "C0805",
+          "C3",
+          {
+            "Manufacturer Part": "CT41G-0805-2X1-50V-0.1uF-K(N)",
+            "Manufacturer": "TORCH(火炬)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C126469"
+          }
+        ],
+        [
+          "10uF",
+          1,
+          "C0805",
+          "C4",
+          {
+            "Manufacturer Part": "CT41G-0805-2X1-50V-0.1uF-K(N)",
+            "Manufacturer": "TORCH(火炬)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C126469"
+          }
+        ],
+        [
+          "Adapter Jack 5525",
+          1,
+          "DC-IN-TH_POWER-JACK",
+          "CN1",
+          {
+            "Manufacturer Part": "POWER-JACK",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900001795"
+          }
+        ],
+        [
+          "PH2.0-6P-Encoder",
+          1,
+          "CONN-TH_WAFER-PH2.0-6PZZ-GR",
+          "CN2",
+          {
+            "Manufacturer Part": "WAFER-PH2.0-6PZZ-GR",
+            "Manufacturer": "XUNPU(讯普)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C20617123"
+          }
+        ],
+        [
+          "XH2.54",
+          1,
+          "CONN-TH_4P-P2.50-XH2.54-4P",
+          "CN3",
+          {
+            "Manufacturer Part": "WAFER-HA2.54-4PZZ",
+            "Manufacturer": "XUNPU(讯普)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5359651"
+          }
+        ],
+        [
+          "SS54_SMB",
+          1,
+          "SMB_L4.3-W3.6-LS5.4-RD",
+          "D3",
+          {
+            "Manufacturer Part": "SS54",
+            "Manufacturer": "HXY MOSFET(华轩阳电子)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5200096"
+          }
+        ],
+        [
+          "LED-TH-3mm_B",
+          1,
+          "LED-TH_BD3.0_BLUE",
+          "LED1",
+          {
+            "Manufacturer Part": "204-10SUBC/S400-A4",
+            "Manufacturer": "EVERLIGHT(台湾亿光)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C86881"
+          }
+        ],
+        [
+          "ESP32-S3 N16R8 WEACT STUDIO",
+          1,
+          "WEACT ESP32-S3",
+          "M1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": "ESP32-S3-N16R8"
+          }
+        ],
+        [
+          "KF126R-5.0-3P",
+          2,
+          "CONN-TH_3P-P5.00_KF126R-5.0-3P",
+          "POT1,POT3",
+          {
+            "Manufacturer Part": "KF126R-5.0-3P",
+            "Manufacturer": "KEFA(科发)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C474903"
+          }
+        ],
+        [
+          "2SC1815-TH",
+          1,
+          "TO-92-3_L4.9-W3.7-P1.27-L",
+          "Q1",
+          {
+            "Manufacturer Part": "2SC1815-GR",
+            "Manufacturer": "YFW(佑风微)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C22459218"
+          }
+        ],
+        [
+          "1kΩ/0.25W",
+          2,
+          "R1206",
+          "R1,R4",
+          {
+            "Manufacturer Part": "HoAR1206-1/4W-1KR-1%-TCR50",
+            "Manufacturer": "Milliohm(毫欧)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2912605"
+          }
+        ],
+        [
+          "2.2kΩ",
+          1,
+          "R1206",
+          "R2",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "3,9kΩ",
+          1,
+          "R1206",
+          "R3",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "10kΩ/0.125W",
+          1,
+          "R0805",
+          "R5",
+          {
+            "Manufacturer Part": "RT0805BRD0751KL",
+            "Manufacturer": "YAGEO(国巨)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C728654"
+          }
+        ],
+        [
+          "KCD1-2P-X",
+          1,
+          "SW-TH_KCD1-101",
+          "SW1",
+          {
+            "Manufacturer Part": "KCD1-2P-X",
+            "Manufacturer": "SHOU HAN(首韩)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5884416"
+          }
+        ],
+        [
+          "Buck DC",
+          1,
+          "DCDC (MP1584EN)",
+          "U",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "TB6612 MODULE",
+          1,
+          "MOTOR_TB6612FNG_MODULE",
+          "U2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "ALI",
+            "Supplier Part": ""
+          }
+        ]
+      ],
+      "updateTime": 1782840420,
+      "createTime": 1782833233,
+      "histories": [],
+      "created_at": "2026-06-30 22:27:13",
+      "updated_at": "2026-07-01 00:27:00"
+    },
+    {
+      "uuid": "11c513d167393d06330a86477a6581a5",
+      "puuid": "40722db890e5322f536424ca6aff2819",
+      "title": "Print x2",
+      "filename": "Print x2.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "2ee8eb13a0124a108e622ce40c0c25a8": 4,
+        "44f4239726ed4ebd893f67f419e4b55b": 2,
+        "8e9b1be4bcb6420dbd1d09bf04b02792": 8,
+        "b60f399a7a7e41848b2be1eb49c79141": 2,
+        "c8232ec72007493490a49fb5bd0a7389": 12,
+        "2236b9ca37184721a557cdaa01e129c5": 8,
+        "4937126739894c52921de221c4760bbc": 2,
+        "c309f5d2eb8e40b796181119d447a76e": 2,
+        "136c310ac0c84278991a3db844bf695e": 2,
+        "5bb3f311460a456db69c8ebd122bf0ba": 2,
+        "52c11d38b35a4fc594f3067d1697639d": 2,
+        "b8a1ccc61728406c8ab2a45757df4768": 2,
+        "3620d538228c41c9ba4a73c8757dd03b": 4,
+        "6924b36489de4921bb29ca14bf27c33f": 2,
+        "fdbc6bbda9eb4ebf929d3b1d7e65807f": 2,
+        "f302ba7fc2d64ac2b2ad82b374d69dac": 2,
+        "e656abc767e048bd87fc55924255013b": 2,
+        "84551071718d4cc9abfb12ed9f701553": 4
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "Reserved Button",
+          4,
+          "KEY-THT BUTTON 2P 5.5MM 6X6MM",
+          "B1,B2,B3,B4",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "BUZZER-12X9",
+          1,
+          "BUZ-TH_BD12.0-P7.60-D0.6-FD",
+          "BUZZER1",
+          {
+            "Manufacturer Part": "buzzer-12X9",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900016920"
+          }
+        ],
+        [
+          "1000uF",
+          2,
+          "CAP-D8.0×H10.5",
+          "C1,C2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "100nF",
+          1,
+          "C0805",
+          "C3",
+          {
+            "Manufacturer Part": "CT41G-0805-2X1-50V-0.1uF-K(N)",
+            "Manufacturer": "TORCH(火炬)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C126469"
+          }
+        ],
+        [
+          "10uF",
+          1,
+          "C0805",
+          "C4",
+          {
+            "Manufacturer Part": "CT41G-0805-2X1-50V-0.1uF-K(N)",
+            "Manufacturer": "TORCH(火炬)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C126469"
+          }
+        ],
+        [
+          "Adapter Jack 5525",
+          1,
+          "DC-IN-TH_POWER-JACK",
+          "CN1",
+          {
+            "Manufacturer Part": "POWER-JACK",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900001795"
+          }
+        ],
+        [
+          "PH2.0-6P-Encoder",
+          1,
+          "CONN-TH_WAFER-PH2.0-6PZZ-GR",
+          "CN2",
+          {
+            "Manufacturer Part": "WAFER-PH2.0-6PZZ-GR",
+            "Manufacturer": "XUNPU(讯普)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C20617123"
+          }
+        ],
+        [
+          "XH2.54",
+          1,
+          "CONN-TH_4P-P2.50-XH2.54-4P",
+          "CN3",
+          {
+            "Manufacturer Part": "WAFER-HA2.54-4PZZ",
+            "Manufacturer": "XUNPU(讯普)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5359651"
+          }
+        ],
+        [
+          "SS54_SMB",
+          1,
+          "SMB_L4.3-W3.6-LS5.4-RD",
+          "D3",
+          {
+            "Manufacturer Part": "SS54",
+            "Manufacturer": "HXY MOSFET(华轩阳电子)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5200096"
+          }
+        ],
+        [
+          "LED-TH-3mm_B",
+          1,
+          "LED-TH_BD3.0_BLUE",
+          "LED1",
+          {
+            "Manufacturer Part": "204-10SUBC/S400-A4",
+            "Manufacturer": "EVERLIGHT(台湾亿光)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C86881"
+          }
+        ],
+        [
+          "ESP32-S3 N16R8 WEACT STUDIO",
+          1,
+          "WEACT ESP32-S3",
+          "M1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": "ESP32-S3-N16R8"
+          }
+        ],
+        [
+          "KF126R-5.0-3P",
+          2,
+          "CONN-TH_3P-P5.00_KF126R-5.0-3P",
+          "POT1,POT3",
+          {
+            "Manufacturer Part": "KF126R-5.0-3P",
+            "Manufacturer": "KEFA(科发)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C474903"
+          }
+        ],
+        [
+          "2SC1815-TH",
+          1,
+          "TO-92-3_L4.9-W3.7-P1.27-L",
+          "Q1",
+          {
+            "Manufacturer Part": "2SC1815-GR",
+            "Manufacturer": "YFW(佑风微)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C22459218"
+          }
+        ],
+        [
+          "1kΩ/0.25W",
+          2,
+          "R1206",
+          "R1,R4",
+          {
+            "Manufacturer Part": "HoAR1206-1/4W-1KR-1%-TCR50",
+            "Manufacturer": "Milliohm(毫欧)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2912605"
+          }
+        ],
+        [
+          "2.2kΩ",
+          1,
+          "R1206",
+          "R2",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "3,9kΩ",
+          1,
+          "R1206",
+          "R3",
+          {
+            "Manufacturer Part": "SMF12M1FR030T",
+            "Manufacturer": "SART(萨特)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C845278"
+          }
+        ],
+        [
+          "10kΩ/0.125W",
+          1,
+          "R0805",
+          "R5",
+          {
+            "Manufacturer Part": "RT0805BRD0751KL",
+            "Manufacturer": "YAGEO(国巨)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C728654"
+          }
+        ],
+        [
+          "KCD1-2P-X",
+          1,
+          "SW-TH_KCD1-101",
+          "SW1",
+          {
+            "Manufacturer Part": "KCD1-2P-X",
+            "Manufacturer": "SHOU HAN(首韩)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5884416"
+          }
+        ],
+        [
+          "Buck DC",
+          1,
+          "DCDC (MP1584EN)",
+          "U",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "TB6612 MODULE",
+          1,
+          "MOTOR_TB6612FNG_MODULE",
+          "U2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "ALI",
+            "Supplier Part": ""
+          }
+        ]
+      ],
+      "updateTime": 1782840881,
+      "createTime": 1782840780,
+      "histories": [],
+      "created_at": "2026-07-01 00:33:00",
+      "updated_at": "2026-07-01 00:34:41"
+    }
+  ],
+  "sort": [],
+  "title": "Cruise-Control-LabVIEW",
+  "foldername": "Cruise-Control-LabVIEW",
+  "schfilename": "Cruise-Control-LabVIEW.json",
+  "schfilemtime": 1782841231283
+}
