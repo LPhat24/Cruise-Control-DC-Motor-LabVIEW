@@ -12,7 +12,7 @@ void send_to_labview_begin(void)
 	last_send_time_ms = millis();
 }
 
-void send_to_labview_update(float rpm_value, uint16_t gas_value, uint16_t brake_value, uint16_t distance_cm)
+void send_to_labview_update(float rpm_value, uint16_t gas_value, uint16_t brake_value, uint16_t distance_cm, int8_t gear_position)
 {
 	uint32_t current_time_ms = millis();
 
@@ -32,7 +32,10 @@ void send_to_labview_update(float rpm_value, uint16_t gas_value, uint16_t brake_
 	Serial.print(brake_value);
 	Serial.print(",");
 
-	Serial.println(distance_cm);
+	/* send distance then gear position */
+	Serial.print(distance_cm);
+	Serial.print(",");
+	Serial.println((int32_t)gear_position);
 }
 
 /*

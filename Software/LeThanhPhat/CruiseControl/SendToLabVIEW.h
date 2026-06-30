@@ -7,8 +7,8 @@
 
 void send_to_labview_begin(void);
 
-/* Send RPM, pedal values and ultrasonic distance */
+/* Send RPM, pedal values, ultrasonic distance and gear position */
 
-void send_to_labview_update(float rpm_value, uint16_t gas_value, uint16_t brake_value, uint16_t distance_cm);
+void send_to_labview_update(float rpm_value, uint16_t gas_value, uint16_t brake_value, uint16_t distance_cm, int8_t gear_position);
 
 #endif
