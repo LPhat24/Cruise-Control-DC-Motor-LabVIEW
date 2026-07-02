@@ -45,15 +45,15 @@ void set_motor_set_pwm(int16_t pwm_value)
 
 	if (pwm_value > 0)
 	{
-		digitalWrite(in1_pin_, HIGH);
-		digitalWrite(in2_pin_, LOW);
+		digitalWrite(in1_pin_, LOW);
+		digitalWrite(in2_pin_, HIGH);
 
 		ledcWrite(PWM_CHANNEL, pwm_value);
 	}
 	else if (pwm_value < 0)
 	{
-		digitalWrite(in1_pin_, LOW);
-		digitalWrite(in2_pin_, HIGH);
+		digitalWrite(in1_pin_, HIGH);
+		digitalWrite(in2_pin_, LOW);
 
 		ledcWrite(PWM_CHANNEL, -pwm_value);
 	}

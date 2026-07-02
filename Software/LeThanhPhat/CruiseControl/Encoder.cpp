@@ -65,6 +65,7 @@ void Encoder_update(void)
 	if (((micros() - currentTimeLocal) <= SIGNAL_TIMEOUT_US) && (cycleLocal > 0))
 	{
 		frequencyHz_ = (float)MICROS_PER_SECOND / (float)cycleLocal;
+		// CycleUs has units of us. To convert to s, multiply by 10^-6. Therefore, f = 1/cycleUs * 10^-6 = 10^6/cycleUs
 	}
 	else
 	{
@@ -73,7 +74,7 @@ void Encoder_update(void)
 	}
 
 	rpm_ = (frequencyHz_ * 60.0f) / pulsesPerOutputRev_;
-
+	// Pulses/second divided by pulses/revolutions = revolutions/second. Multiply by 60 -> revolutions/second * seconds/minute = RPM
 	rpm_ *= directionLocal;
 }
 
